@@ -1,0 +1,3 @@
+renus_parameters_editor_homepage:
+    path:     /
+    defaults: { _controller: RenusParametersEditorBundle:Edit:index }

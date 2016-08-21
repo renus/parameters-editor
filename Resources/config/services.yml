@@ -1,0 +1,4 @@
+services:
+    renus_parameters_editor.editor:
+        class: Renus\ParametersEditorBundle\Service\Editor
+        arguments: ["%kernel.root_dir%"]

@@ -1,0 +1,30 @@
+{
+  "name" : "renus/parameters-editor",
+  "description" : "Symfony 2 bundle to edit parameters.yml symfony file",
+  "type" : "symfony-bundle",
+  "authors" : [{
+    "name" : "Renaud Mioque",
+    "email" : "renaud.mioque@gmail.com"
+  }],
+  "keywords" : [
+    "Symfony 2 parameters parameters.yml editor config edit"
+  ],
+  "license" : [
+    "MIT"
+  ],
+  "require" : {
+  },
+  "autoload" : {
+    "psr-0" : {
+      "Renus\\ParametersEditorBundle" : ""
+    }
+  },
+  "target-dir" : "Renus/ParametersEditorBundle",
+  "repositories" : [{
+  }],
+  "extra" : {
+    "branch-alias" : {
+      "dev-master" : "1.0-dev"
+    }
+  }
+}
