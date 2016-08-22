@@ -24,5 +24,9 @@ class RenusParametersEditorExtension extends Extension
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
+
+        $container->setParameter('renus.parameters_all', $config['all_parameters']);
+        $container->setParameter('renus.default_keyword', $config['default_keyword']);
+
     }
 }

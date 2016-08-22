@@ -1,4 +1,4 @@
 services:
     renus_parameters_editor.editor:
         class: Renus\ParametersEditorBundle\Service\Editor
-        arguments: ["%kernel.root_dir%"]
+        arguments: ["%kernel.root_dir%", "%renus.parameters_all%", "%renus.default_keyword%"]

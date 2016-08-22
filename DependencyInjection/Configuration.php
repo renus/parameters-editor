@@ -20,9 +20,16 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('renus_parameters_editor');
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
+        $rootNode
+            ->children()
+                ->booleanNode('all_parameters')
+                    ->defaultFalse()
+                ->end()
+                ->scalarNode('default_keyword')
+                    ->defaultValue('editable')
+                ->end()
+            ->end()
+        ;
 
         return $treeBuilder;
     }
