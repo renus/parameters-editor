@@ -27,6 +27,9 @@ class EditController extends Controller
             $data = $form->getData();
             $editor->writeConfiguration($data);
 
+            $cacheDir = $this->container->getParameter('kernel.cache_dir');
+            $this->container->get('cache_clearer')->clear($cacheDir);
+
             $this->addFlash('success', 'Modification ok');
             return $this->redirect($this->getRequest()->headers->get('referer'));
         }
