@@ -46,8 +46,6 @@ class Editor
 
         $value = Yaml::parse(file_get_contents($this->file));
 
-
-
         if (! $this->allParameters) {
             $return = [];
             foreach ($value['parameters'] as $key => $parameter) {
@@ -74,10 +72,10 @@ class Editor
     public function buildForm(FormBuilder $form, $editables = [])
     {
         foreach ($editables as $key => $editable) {
-            $form->add($key, TextType::class, [
+            $form->add(str_replace(".","__",$key), TextType::class, [
                 'label'    => $key,
                 'data'     => $editable,
-                'required' => true
+                'required' => ! empty($editable)
             ]);
         }
 
@@ -93,7 +91,7 @@ class Editor
         $value = Yaml::parse(file_get_contents($this->file));
 
         foreach($editables as $key => $editable) {
-            $keyname = ((! $this->allParameters) ? $this->keyword : "") . "." . $key;
+            $keyname = ((! $this->allParameters) ? $this->keyword . "." : "")  . str_replace("__",".", $key);
             $value['parameters'][$keyname] = $editable;
         }
 
