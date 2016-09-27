@@ -31,7 +31,7 @@ class EditController extends Controller
             $this->container->get('cache_clearer')->clear($cacheDir);
 
             $this->addFlash('success', 'Modification ok');
-            return $this->redirect($this->get('request')->headers->get('referer'));
+            return $this->redirect($this->get('request_stack')->getCurrentRequest()->headers->get('referer'));
         }
 
         return $this->render('RenusParametersEditorBundle:Editor:index.html.twig', [
